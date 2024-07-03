@@ -4,6 +4,7 @@ import Layout from "../components/Layout";
 import Profile from "../pages/Profile";
 import Home from "../pages/Home";
 import { FetchBackend } from "../pages/FetchBackend";
+import ErrorPage from "../pages/ErrorPage";
 
 export const appRouter = () => {
     const AuthenticatedProfile = RequireAuthenticatedUser(Profile);
@@ -12,6 +13,7 @@ export const appRouter = () => {
     return createBrowserRouter([
         {
             element: <Layout />,
+            errorElement: <ErrorPage />,
             children: [
                 {
                     path: "/",
