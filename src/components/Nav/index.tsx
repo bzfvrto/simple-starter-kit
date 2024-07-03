@@ -11,6 +11,7 @@ export default function Nav() {
             <nav className={styles.navigation}>
                 <Link to="/">Home</Link>
                 <Link to="/profile">Profile</Link>
+                <Link to="/api-example">Api Example</Link>
             </nav>
             <div className={styles.authBtn}>{isAuthenticated ? <LogoutButton /> : <LoginButton />}</div>
         </div>

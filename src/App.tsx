@@ -6,7 +6,9 @@ function App() {
     return (
         <div className="container">
             <Nav />
-            <Outlet />
+            <div className="content">
+                <Outlet />
+            </div>
         </div>
     );
 }

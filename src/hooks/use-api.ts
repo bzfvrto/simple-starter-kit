@@ -13,10 +13,10 @@ export const useApi = (url: string, options: any = {}): { error?: Error | null; 
     useEffect(() => {
         (async () => {
             try {
-                const { audience, scope, ...fetchOptions } = options;
+                const { audience, ...fetchOptions } = options;
 
                 const accessToken = await getAccessTokenSilently({
-                    authorizationParams: { audience, scope },
+                    authorizationParams: { audience },
                 });
 
                 const res = await fetch(url, {
@@ -36,6 +36,8 @@ export const useApi = (url: string, options: any = {}): { error?: Error | null; 
                   });
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
             } catch (error: any) {
+                console.log('THERE IS AN ERROR', error);
+
                 setState({
                     ...state,
                     error,
@@ -43,6 +45,7 @@ export const useApi = (url: string, options: any = {}): { error?: Error | null; 
                   });
             }
         })();
-    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
     return state;
 }

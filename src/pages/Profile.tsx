@@ -1,10 +1,11 @@
 import { useAuth0, User } from "@auth0/auth0-react";
+import { Loading } from "../components/Loading";
 
 export default function Profile() {
     const { user, isAuthenticated, isLoading } = useAuth0();
 
     if (isLoading) {
-        return <div>Loading ...</div>;
+        return <Loading />;
     }
 
     if (!user) {
