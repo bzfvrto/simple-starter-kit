@@ -4,6 +4,7 @@
 
 .navigation a:hover {
     color: #d97706;
+    border-bottom: 2px solid blue;
 }
 
 .navigationContainer {
