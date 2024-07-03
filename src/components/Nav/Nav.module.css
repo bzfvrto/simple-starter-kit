@@ -1,0 +1,25 @@
+.navigation a {
+    padding: 5px;
+}
+
+.navigation a:hover {
+    color: #d97706;
+}
+
+.navigationContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    width: 100%;
+    /* border: 1px solid red; */
+}
+
+.authBtn {
+    display: flex;
+}
+
+.authBtn button:not(:first-child) {
+    margin-left: 5px;
+}
