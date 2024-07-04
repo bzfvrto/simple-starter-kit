@@ -1,0 +1,17 @@
+.container {
+    width: 100%;
+    overflow: scroll;
+    height: 100%;
+    border: 1px solid black;
+    border-radius: 25px;
+    /* scrollbar-color: rebeccapurple green; */
+    scrollbar-width: thin;
+    scroll-behavior: smooth;
+}
+
+.tableContent {
+    table-layout: fixed;
+    width: 100%;
+    overflow: hidden;
+    border-collapse: collapse;
+}

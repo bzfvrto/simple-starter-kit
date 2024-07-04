@@ -1,0 +1,24 @@
+.container {
+    border-top: 1px solid #e2e8f0;
+    cursor: pointer;
+}
+
+.row {
+    /* width: 250px; */
+    padding: 5px 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.hiddenRow {
+    transition:
+        opacity .5s,
+        height 1s;
+}
+
+@media (prefers-color-scheme: light) {
+    .container {
+        border-top: 1px solid #020617;
+    }
+}

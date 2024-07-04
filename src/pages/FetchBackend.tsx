@@ -3,7 +3,9 @@ import { Loading } from "../components/Loading";
 import { useApi } from "../hooks/use-api";
 
 export function FetchBackend() {
+    // eslint-disable-next-line @typescript-eslint/restrict-template-expressions, @typescript-eslint/no-unsafe-assignment
     const { loading, data, error } = useApi(`${import.meta.env.VITE_API_URL}/users`, {
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
         audience: import.meta.env.VITE_OKTA_AUTH_AUDIENCE,
         scope: "read",
     });

@@ -1,0 +1,23 @@
+.container {
+    transition:
+        opacity .5s,
+        height .5s;
+    padding: 15px 25px;
+    border-top: 1px solid #64748b;
+    padding-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+.content {
+    border-radius: 25px;
+    background-color: #64748b;
+}
+
+.detailList {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: auto;
+    /* justify-content: left; */
+    /* align-items: center; */
+}

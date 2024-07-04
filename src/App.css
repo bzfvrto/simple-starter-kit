@@ -1,5 +1,6 @@
 #root {
     width: 85%;
+    /* height: calc(100vh - 20px); */
     max-width: 1280px;
     margin: 0 auto;
     padding: 10px 2rem;
@@ -10,7 +11,7 @@
     /* display: grid;
     grid-template-rows: 50px auto;
     grid-template-columns: 1fr auto; */
-    height: 100vh;
+    height: calc(100vh - 20px);
 }
 
 .content {

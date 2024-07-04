@@ -2,7 +2,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 import { useEffect, useState } from "react";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const useApi = (url: string, options: any = {}): { error?: Error | null; loading: boolean;  data?: any} => {
+export const useApi = (url: string, options: {audience: string, scope?: string, headers?: object} = {audience: ''}): { error?: Error | null; loading: boolean;  data?: any} => {
     const { getAccessTokenSilently } = useAuth0();
     const [state, setState] = useState({
         error: null,
@@ -11,7 +11,7 @@ export const useApi = (url: string, options: any = {}): { error?: Error | null; 
     });
 
     useEffect(() => {
-        (async () => {
+        void (async () => {
             try {
                 const { audience, ...fetchOptions } = options;
 
@@ -30,6 +30,7 @@ export const useApi = (url: string, options: any = {}): { error?: Error | null; 
 
                 setState({
                     ...state,
+                    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
                     data: await res.json(),
                     error: null,
                     loading: false,
@@ -40,6 +41,7 @@ export const useApi = (url: string, options: any = {}): { error?: Error | null; 
 
                 setState({
                     ...state,
+                    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
                     error,
                     loading: false,
                   });

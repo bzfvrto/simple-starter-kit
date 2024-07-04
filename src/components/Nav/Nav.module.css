@@ -1,5 +1,6 @@
 .navigation a {
     padding: 5px;
+    margin-right: 5px;
 }
 
 .navigation a:hover {
