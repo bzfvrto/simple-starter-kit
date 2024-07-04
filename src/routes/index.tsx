@@ -1,12 +1,14 @@
 import { createBrowserRouter } from "react-router-dom";
 import { RequireAuthenticatedUser } from "../components/RequireAuthenticatedUser";
-import Layout from "../components/Layout";
+import RootLayout from "../components/RootLayout";
 import Profile from "../pages/Profile";
 import Home from "../pages/Home";
 import { FetchBackend } from "../pages/FetchBackend";
 import ErrorPage from "../pages/ErrorPage";
 import DataDisplay from "../pages/DataDisplay";
 import { loader as dataLoader } from "./loader/data";
+import GuestLayout from "../components/GuestLayout";
+import { DashboardLayout } from "../components/DashboardLayout";
 
 export const appRouter = () => {
     const AuthenticatedProfile = RequireAuthenticatedUser(Profile);
@@ -14,25 +16,35 @@ export const appRouter = () => {
 
     return createBrowserRouter([
         {
-            element: <Layout />,
+            element: <RootLayout />,
             errorElement: <ErrorPage />,
             children: [
                 {
-                    path: "/",
-                    element: <Home />,
+                    element: <GuestLayout />,
+                    children: [
+                        {
+                            path: "/",
+                            element: <Home />,
+                        },
+                    ],
                 },
                 {
-                    path: "/profile",
-                    element: <AuthenticatedProfile />,
-                },
-                {
-                    path: "/api-example",
-                    element: <AuthenticatedFetchApi />,
-                },
-                {
-                    path: "/data-display",
-                    element: <DataDisplay />,
-                    loader: dataLoader,
+                    element: <DashboardLayout />,
+                    children: [
+                        {
+                            path: "/profile",
+                            element: <AuthenticatedProfile />,
+                        },
+                        {
+                            path: "/api-example",
+                            element: <AuthenticatedFetchApi />,
+                        },
+                        {
+                            path: "/data-display",
+                            element: <DataDisplay />,
+                            loader: dataLoader,
+                        },
+                    ],
                 },
             ],
         },

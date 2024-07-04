@@ -23,19 +23,34 @@ export default function Profile() {
     return (
         isAuthenticated && (
             <div>
-                <img src={user.picture} alt={user.name} />
-                <h2>{user.name}</h2>
-                <p>{user.email}</p>
-                {/* <p>{JSON.stringify(user, null, 2)}</p> */}
-                <ul style={{ textAlign: "left" }}>
-                    {userProperties(user).map((property) => {
-                        return (
-                            <li key={property.name}>
-                                {property.name} : {property.value}
-                            </li>
-                        );
-                    })}
-                </ul>
+                <h2
+                    style={{
+                        boxShadow: "2px 2px 2px 1px rgba(0,0,0,0.075)",
+                        paddingBottom: "1rem",
+                        paddingTop: ".75rem",
+                    }}
+                >
+                    Profile
+                </h2>
+                <div
+                    style={{
+                        marginTop: "1rem",
+                    }}
+                >
+                    <img src={user.picture} alt={user.name} />
+                    <h2>{user.name}</h2>
+                    <p>{user.email}</p>
+                    {/* <p>{JSON.stringify(user, null, 2)}</p> */}
+                    <ul style={{ textAlign: "left" }}>
+                        {userProperties(user).map((property) => {
+                            return (
+                                <li key={property.name}>
+                                    {property.name} : {property.value}
+                                </li>
+                            );
+                        })}
+                    </ul>
+                </div>
             </div>
         )
     );

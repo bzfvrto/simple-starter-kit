@@ -16,8 +16,6 @@ export function Item({ property, value }: { property: string; value: string }) {
     );
 }
 export function ExpandableRow({ details, expanded }: { details: any; expanded: boolean }) {
-    console.log(details, expanded);
-
     const getDetailList = () => {
         const list = [];
         for (const key in details) {
@@ -32,6 +30,7 @@ export function ExpandableRow({ details, expanded }: { details: any; expanded: b
         <div className={styles.container} style={{ height: expanded ? "100%" : 0, opacity: expanded ? 1 : 0 }}>
             {/* <div className={styles.content}>{JSON.stringify(details)}</div> */}
             <div className={styles.content}>
+                <h5 className={styles.detailTitle}>Details</h5>
                 <dl className={styles.detailList}>{getDetailList()}</dl>
             </div>
         </div>

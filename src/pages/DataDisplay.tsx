@@ -25,12 +25,11 @@ export default function DataDisplay() {
     ];
 
     return (
-        <div>
-            <h4>DataDisplay</h4>
-            {/* <div>{JSON.stringify(data, null, 2)}</div> */}
-            <div style={{ height: "75vh" }}>
-                <Table columns={myColums.filter((i) => i.title !== "")} elements={data} isExpandable={true} />
-            </div>
+        <div style={{ height: "100%" }}>
+            <h2 style={{ boxShadow: "2px 2px 2px 1px rgba(0,0,0,0.075)", paddingBottom: "1rem", paddingTop: ".75rem" }}>
+                Data Display
+            </h2>
+            <Table columns={myColums.filter((i) => i.title !== "")} elements={data} isExpandable={true} />
         </div>
     );
 }

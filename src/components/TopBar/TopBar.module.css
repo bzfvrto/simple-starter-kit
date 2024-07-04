@@ -1,0 +1,26 @@
+.container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #030712;
+    padding: 0 1rem;
+    /* padding: 1rem; */
+    border-bottom: 1px solid #475569;
+}
+
+.avatar {
+    height: 80%;
+    border-radius: 999px;
+}
+
+@media (prefers-color-scheme: light) {
+    .topBar {
+        background-color: #242424;
+        border-bottom: 1px solid #e2e8f0;
+    }
+    .footer {
+        background-color: #242424;
+        border-bottom: 1px solid #e2e8f0;
+    }
+}

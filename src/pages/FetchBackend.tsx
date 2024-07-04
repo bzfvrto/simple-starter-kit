@@ -19,7 +19,9 @@ export function FetchBackend() {
 
     return (
         <div>
-            <h2>Fetch Backend</h2>
+            <h2 style={{ boxShadow: "2px 2px 2px 1px rgba(0,0,0,0.075)", paddingBottom: "1rem", paddingTop: ".75rem" }}>
+                Fetch Backend
+            </h2>
             {data && (
                 <div>
                     <h6>Authenticated Api response :</h6>

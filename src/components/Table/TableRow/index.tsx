@@ -25,14 +25,14 @@ export default function TableRow({
                 {data.map((item, index) => {
                     if (index === 0) {
                         return (
-                            <th scope="row" className={styles.row} key={index}>
+                            <th scope="row" className={styles.rowCell} key={index}>
                                 {item}
                             </th>
                         );
                     }
                     return (
                         <td
-                            className={styles.row}
+                            className={styles.rowCell}
                             key={index}
                             style={{ width: 250, paddingTop: 5, paddingBottom: 5, position: "relative" }}
                         >

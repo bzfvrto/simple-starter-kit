@@ -1,15 +1,19 @@
 .container {
-    border-top: 1px solid #e2e8f0;
+    border-top: 1px solid #475569;
     cursor: pointer;
 }
 
-.row {
+.rowCell {
     /* width: 250px; */
-    padding: 5px 10px;
+    padding: 1rem .75rem;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
 }
+
+/* .rowCell:first-child {
+    background-color: #1e293b;
+} */
 
 .hiddenRow {
     transition:
@@ -18,7 +22,10 @@
 }
 
 @media (prefers-color-scheme: light) {
+    .container:not(:first-child) {
+        border-top: 1px solid #cbd5e1;
+    }
     .container {
-        border-top: 1px solid #020617;
+        border-top: 1px solid #e2e8f0;
     }
 }

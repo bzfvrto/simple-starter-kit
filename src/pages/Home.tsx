@@ -6,7 +6,6 @@ import { useNavigation } from "react-router-dom";
 export default function Home() {
     const [count, setCount] = useState(0);
     const navigation = useNavigation();
-    console.log(navigation);
 
     return (
         <>
