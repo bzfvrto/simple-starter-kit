@@ -25,32 +25,16 @@ export default function Nav() {
     return (
         <div className={styles.navigationContainer}>
             <nav className={styles.navigation}>
-                <NavLink
-                    to="/"
-                    style={linkStyle}
-                    // unstable_viewTransition
-                >
+                <NavLink to="/" style={linkStyle} unstable_viewTransition>
                     Home
                 </NavLink>
-                <NavLink
-                    to="/profile"
-                    style={linkStyle}
-                    // unstable_viewTransition
-                >
+                <NavLink to="/profile" style={linkStyle} unstable_viewTransition>
                     Profile
                 </NavLink>
-                <NavLink
-                    to="/api-example"
-                    style={linkStyle}
-                    // unstable_viewTransition
-                >
+                <NavLink to="/api-example" style={linkStyle} unstable_viewTransition>
                     Api Example
                 </NavLink>
-                <NavLink
-                    to="/data-display"
-                    style={linkStyle}
-                    // unstable_viewTransition
-                >
+                <NavLink to="/data-display" style={linkStyle} unstable_viewTransition>
                     Table
                 </NavLink>
             </nav>

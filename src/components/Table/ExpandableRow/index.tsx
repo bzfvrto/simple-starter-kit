@@ -22,7 +22,7 @@ export function ExpandableRow({ details, expanded }: { details: any; expanded: b
         const list = [];
         for (const key in details) {
             if (Object.prototype.hasOwnProperty.call(details, key)) {
-                list.push(<Item property={key} value={details[key]} />);
+                list.push(<Item key={key} property={key} value={details[key]} />);
             }
         }
         return list;

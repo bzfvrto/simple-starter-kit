@@ -1,11 +1,16 @@
 import { useState } from "react";
 import reactLogo from "../assets/react.svg";
 import viteLogo from "/vite.svg";
+import { useNavigation } from "react-router-dom";
 
 export default function Home() {
     const [count, setCount] = useState(0);
+    const navigation = useNavigation();
+    console.log(navigation);
+
     return (
         <>
+            {navigation.state !== "idle" ? <p>Loading data...</p> : null}
             <div>
                 <a href="https://vitejs.dev" target="_blank">
                     <img src={viteLogo} className="logo" alt="Vite logo" />
