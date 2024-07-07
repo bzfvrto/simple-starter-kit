@@ -23,17 +23,19 @@ export default function TableBody({
     };
 
     return (
-        <tbody className={styles.container}>
-            {rowElements.map((element, index) => {
-                return (
-                    <TableRow
-                        key={index}
-                        data={columnizeObject(element)}
-                        details={isExpandable ? element : null}
-                        colCount={columns.length}
-                    />
-                );
-            })}
-        </tbody>
+        <>
+            <tbody className={styles.container}>
+                {rowElements.map((element, index) => {
+                    return (
+                        <TableRow
+                            key={index}
+                            data={columnizeObject(element)}
+                            details={isExpandable ? element : null}
+                            colCount={columns.length}
+                        />
+                    );
+                })}
+            </tbody>
+        </>
     );
 }

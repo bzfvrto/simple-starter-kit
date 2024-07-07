@@ -8,6 +8,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 import { Loading } from "../Loading";
 import { Footer } from "../Footer";
 import TopBar from "../TopBar";
+import ModalProvider from "../../providers/ModalProvider";
 
 export function DashboardLayout() {
     const { isLoading, user } = useAuth0();
@@ -16,19 +17,21 @@ export function DashboardLayout() {
     }
 
     return (
-        <div className={styles.container}>
-            <div className={styles.topBar}>
-                <TopBar user={user} />
-            </div>
-            <SideBar />
-            <div className={styles.innerContainer}>
-                <div className={styles.dashboardContent + " content"}>
-                    <Outlet />
+        <ModalProvider>
+            <div className={styles.container}>
+                <div className={styles.topBar}>
+                    <TopBar user={user} />
+                </div>
+                <SideBar />
+                <div className={styles.innerContainer}>
+                    <div className={styles.dashboardContent + " content"}>
+                        <Outlet />
+                    </div>
+                </div>
+                <div className={styles.footer}>
+                    <Footer />
                 </div>
             </div>
-            <div className={styles.footer}>
-                <Footer />
-            </div>
-        </div>
+        </ModalProvider>
     );
 }

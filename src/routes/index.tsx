@@ -9,6 +9,7 @@ import DataDisplay from "../pages/DataDisplay";
 import { loader as dataLoader } from "./loader/data";
 import GuestLayout from "../components/GuestLayout";
 import { DashboardLayout } from "../components/DashboardLayout";
+import { fakeFormAction } from "../actions/fakeFormAction";
 
 export const appRouter = () => {
     const AuthenticatedProfile = RequireAuthenticatedUser(Profile);
@@ -42,6 +43,7 @@ export const appRouter = () => {
                         {
                             path: "/data-display",
                             element: <DataDisplay />,
+                            action: fakeFormAction,
                             loader: dataLoader,
                         },
                     ],

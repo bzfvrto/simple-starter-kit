@@ -15,8 +15,8 @@
 }
 
 @media (prefers-color-scheme: light) {
-    .topBar {
-        background-color: #242424;
+    .container {
+        background-color: #f1f5f9;
         border-bottom: 1px solid #e2e8f0;
     }
     .footer {

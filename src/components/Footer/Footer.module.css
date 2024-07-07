@@ -14,3 +14,10 @@
     font-style: oblique;
     color: #64748b;
 }
+
+@media (prefers-color-scheme: light) {
+    .container {
+        background-color: #f1f5f9;
+        border-top: 1px solid #e2e8f0;
+    }
+}

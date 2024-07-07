@@ -33,7 +33,7 @@
 
 @media (prefers-color-scheme: light) {
     .container {
-        background-color: #242424;
-        border-bottom: 1px solid #e2e8f0;
+        background-color: #f1f5f9;
+        border-right: 1px solid #e2e8f0;
     }
 }

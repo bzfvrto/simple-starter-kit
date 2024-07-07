@@ -1,3 +1,4 @@
+import { useModal } from "../../../hooks/use-modal";
 import styles from "./ExpandableRow.module.css";
 
 export function Item({ property, value }: { property: string; value: string }) {
@@ -26,11 +27,23 @@ export function ExpandableRow({ details, expanded }: { details: any; expanded: b
         return list;
     };
 
+    const modal = useModal();
+
+    const handleEdition = () => {
+        modal.setModalModel(details);
+        modal.handleChange();
+    };
+
     return (
         <div className={styles.container} style={{ height: expanded ? "100%" : 0, opacity: expanded ? 1 : 0 }}>
             {/* <div className={styles.content}>{JSON.stringify(details)}</div> */}
             <div className={styles.content}>
-                <h5 className={styles.detailTitle}>Details</h5>
+                <div className={styles.detailTitleContainer}>
+                    <h5 className={styles.detailTitle}>Details</h5>
+                    <button className={styles.editBtn} type="button" onClick={handleEdition}>
+                        Edit
+                    </button>
+                </div>
                 <dl className={styles.detailList}>{getDetailList()}</dl>
             </div>
         </div>

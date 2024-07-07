@@ -1,0 +1,35 @@
+/* .formContainer {
+    box-shadow: inset 2px 2px 2px 1px rgba(0,0,0,0.075);
+} */
+
+/* .formContent {
+    margin-bottom: 1rem;
+} */
+
+.form {
+    height: 100%;
+    padding-bottom: 1rem;
+}
+
+.formTitle {
+    position: sticky;
+    top: 0;
+    margin-top: 0;
+    padding-top: 1rem;
+    background-color: #0f172a;
+    box-shadow: 2px 2px 2px 1px rgba(125,125,125,0.1);
+}
+
+
+/* @media(min-width: 640px) {
+    .formTitle {
+    background-color: white;
+    }
+} */
+
+@media (prefers-color-scheme: light) {
+    .formTitle {
+        background-color: white;
+        box-shadow: 2px 2px 2px 1px rgba(0,0,0,0.075);
+    }
+}
