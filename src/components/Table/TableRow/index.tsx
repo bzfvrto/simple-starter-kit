@@ -1,15 +1,18 @@
 import { startTransition, useState } from "react";
 import styles from "./TableRow.module.css";
 import { ExpandableRow } from "../ExpandableRow";
+import { mergeClassNames } from "../../../utils/classNames";
 
 export default function TableRow({
     data,
     colCount,
     details,
+    className,
 }: {
     data: string[];
     details: null | object;
     colCount: number;
+    className?: string;
 }) {
     const [expanded, setExpanded] = useState(false);
     const [show, setShow] = useState(false);
@@ -19,9 +22,12 @@ export default function TableRow({
             setExpanded((expanded) => !expanded);
         });
     };
+
+    const classNames = mergeClassNames(styles.container, className ?? "");
+
     return (
         <>
-            <tr className={styles.container} onClick={() => toggleRowExpansion()}>
+            <tr className={classNames} onClick={() => toggleRowExpansion()}>
                 {data.map((item, index) => {
                     if (index === 0) {
                         return (

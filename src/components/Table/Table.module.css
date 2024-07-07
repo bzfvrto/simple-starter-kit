@@ -3,18 +3,14 @@
     overflow: scroll;
     height: 100%;
     text-align: left;
-    /* margin-top: 1rem; */
-    /* border: 1px solid black; */
-    /* border-radius: 25px; */
-    /* scrollbar-color: rebeccapurple green; */
     scrollbar-width: thin;
     scroll-behavior: smooth;
+    position: relative;
 }
 
 .tableContent {
     table-layout: fixed;
     width: 100%;
     /* height: calc(100% - 1rem - 55px); */
-    overflow: hidden;
     border-collapse: collapse;
 }

@@ -32,6 +32,7 @@ export default function TableBody({
                             data={columnizeObject(element)}
                             details={isExpandable ? element : null}
                             colCount={columns.length}
+                            className={styles.row}
                         />
                     );
                 })}

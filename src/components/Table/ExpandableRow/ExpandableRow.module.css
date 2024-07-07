@@ -5,14 +5,13 @@
     padding: 15px 25px;
     border-top: 1px solid #475569;
     padding-top: .55rem;
-    /* margin-bottom: 2rem; */
-    box-shadow: inset -2px 2px 4px 1px #ffedd520, inset 2px -2px 2px 1px #e0f2fe22;
+    box-shadow: inset 2px 2px 1px 2px #ffedd520, inset 2px -2px 2px 1px #e0f2fe22;
 }
 
 .content {
     border-radius: 25px;
     background-color: #030712;
-    border: 1px solid #64748b;
+    /* border: 1px solid #64748b; */
     margin: 1rem 0.25rem;
     box-shadow: 1px 1px 8px 5px rgba(0,0,0,0.05);
 }

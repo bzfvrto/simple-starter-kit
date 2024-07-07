@@ -3,6 +3,14 @@
     background-color: #475569;
 } */
 
+.row {
+    background-color: white;
+    /* box-shadow: -2px 2px 4px 1px #efefef20; */
+}
+.row:nth-child(even) {
+    background-color: #f1f5f9;
+}
+
 @media (prefers-color-scheme: light) {
     /* .container {
         background-color: #f1f5f9;
