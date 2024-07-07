@@ -3,6 +3,7 @@ import Table from "../components/Table";
 // import { Modal } from "../components/Modal";
 import { useModal } from "../hooks/use-modal";
 import DynamicForm from "../components/Forms/DynamicForm";
+import { PageTitle } from "../components/Titles/PageTitle";
 // import { useState } from "react";
 
 export default function DataDisplay() {
@@ -51,15 +52,7 @@ export default function DataDisplay() {
                 {modal.model && <DynamicForm model={modal.model} onSubmit={handleFormSubmission} />}
             </modal.modalComponent>
             <div style={{ height: "100%" }}>
-                <h2
-                    style={{
-                        boxShadow: "2px 2px 2px 1px rgba(0,0,0,0.075)",
-                        paddingBottom: "1rem",
-                        paddingTop: ".75rem",
-                    }}
-                >
-                    Data Display
-                </h2>
+                <PageTitle>Data Display</PageTitle>
                 <Table columns={myColums.filter((i) => i.title !== "")} elements={data} isExpandable={true} />
             </div>
         </>

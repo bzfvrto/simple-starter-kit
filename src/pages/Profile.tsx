@@ -1,5 +1,6 @@
 import { useAuth0, User } from "@auth0/auth0-react";
 import { Loading } from "../components/Loading";
+import { PageTitle } from "../components/Titles/PageTitle";
 
 export default function Profile() {
     const { user, isAuthenticated, isLoading } = useAuth0();
@@ -23,15 +24,7 @@ export default function Profile() {
     return (
         isAuthenticated && (
             <div>
-                <h2
-                    style={{
-                        boxShadow: "2px 2px 2px 1px rgba(0,0,0,0.075)",
-                        paddingBottom: "1rem",
-                        paddingTop: ".75rem",
-                    }}
-                >
-                    Profile
-                </h2>
+                <PageTitle>Profile</PageTitle>
                 <div
                     style={{
                         marginTop: "1rem",

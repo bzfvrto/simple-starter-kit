@@ -1,0 +1,6 @@
+.titleContainer {
+    box-shadow: 2px 2px 2px 1px rgba(0,0,0,0.075);
+    padding: 1rem .25rem .75rem .25rem;
+    font-size: 1.5rem;
+    margin: 0;
+}

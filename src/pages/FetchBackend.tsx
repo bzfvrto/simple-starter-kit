@@ -1,5 +1,6 @@
 // import { useEffect } from "react";
 import { Loading } from "../components/Loading";
+import { PageTitle } from "../components/Titles/PageTitle";
 import { useApi } from "../hooks/use-api";
 
 export function FetchBackend() {
@@ -19,9 +20,7 @@ export function FetchBackend() {
 
     return (
         <div>
-            <h2 style={{ boxShadow: "2px 2px 2px 1px rgba(0,0,0,0.075)", paddingBottom: "1rem", paddingTop: ".75rem" }}>
-                Fetch Backend
-            </h2>
+            <PageTitle>Fetch Backend</PageTitle>
             {data && (
                 <div>
                     <h6>Authenticated Api response :</h6>
