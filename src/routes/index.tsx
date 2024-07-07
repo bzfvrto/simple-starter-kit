@@ -12,8 +12,7 @@ import { DashboardLayout } from "../components/DashboardLayout";
 import { fakeFormAction } from "../actions/fakeFormAction";
 
 export const appRouter = () => {
-    const AuthenticatedProfile = RequireAuthenticatedUser(Profile);
-    const AuthenticatedFetchApi = RequireAuthenticatedUser(FetchBackend);
+    const AuthenticatedDashboard = RequireAuthenticatedUser(DashboardLayout);
 
     return createBrowserRouter([
         {
@@ -30,15 +29,15 @@ export const appRouter = () => {
                     ],
                 },
                 {
-                    element: <DashboardLayout />,
+                    element: <AuthenticatedDashboard />,
                     children: [
                         {
                             path: "/profile",
-                            element: <AuthenticatedProfile />,
+                            element: <Profile />,
                         },
                         {
                             path: "/api-example",
-                            element: <AuthenticatedFetchApi />,
+                            element: <FetchBackend />,
                         },
                         {
                             path: "/data-display",
