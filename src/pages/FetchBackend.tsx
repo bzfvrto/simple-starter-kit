@@ -14,19 +14,56 @@ export function FetchBackend() {
     if (loading) {
         return <Loading />;
     }
+
     if (error) {
         return <div>{JSON.stringify(data)}</div>;
     }
 
+    const printResponse = (data: any) => {
+        const properties = [];
+        for (const key in data) {
+            if (Object.prototype.hasOwnProperty.call(data, key)) {
+                const element = data[key];
+                console.log(element);
+
+                properties.push(`${key} : ${element}`);
+            }
+        }
+        return properties;
+    };
+
     return (
-        <div>
+        <div style={{ height: "100%" }}>
             <PageTitle>Fetch Backend</PageTitle>
             {data && (
-                <div>
-                    <h6>Authenticated Api response :</h6>
-                    <p style={{ overflowWrap: "break-word", margin: 15, padding: 2 }}>
-                        {JSON.stringify(data, null, 2)}
-                    </p>
+                <div
+                    style={{
+                        overflowY: "scroll",
+                        height: "100%",
+                        overflowWrap: "break-word",
+                        margin: 15,
+                        padding: "2rem",
+                    }}
+                >
+                    <h3>Authenticated Api response :</h3>
+                    <div style={{ marginBottom: "5rem" }}>
+                        <h6>Response payload</h6>
+                        <ul style={{ textAlign: "left" }}>
+                            {printResponse(data.users.payload).map((item) => {
+                                return <li>{item}</li>;
+                            })}
+                        </ul>
+                        <h6 style={{ marginTop: "2rem" }}>Response headers</h6>
+                        <ul style={{ textAlign: "left" }}>
+                            {printResponse(data.users.header).map((item) => {
+                                return <li>{item}</li>;
+                            })}
+                        </ul>
+                        <h6 style={{ marginTop: "2rem" }}>Response Token</h6>
+                        <div>
+                            <p>token : {data.users.token}</p>
+                        </div>
+                    </div>
                 </div>
             )}
         </div>

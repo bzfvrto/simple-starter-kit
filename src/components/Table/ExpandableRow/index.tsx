@@ -21,7 +21,9 @@ export function ExpandableRow({ details, expanded }: { details: any; expanded: b
         const list = [];
         for (const key in details) {
             if (Object.prototype.hasOwnProperty.call(details, key)) {
-                list.push(<Item key={key} property={key} value={details[key]} />);
+                if (typeof details[key] !== "object") {
+                    list.push(<Item key={key} property={key} value={details[key]} />);
+                }
             }
         }
         return list;

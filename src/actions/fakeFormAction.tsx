@@ -17,7 +17,7 @@ export const fakeFormAction = async ({ request, params }: any) => {
             properties.push(`${key} : ${element}`);
         }
     }
-    // alert(properties.join("\n"));
+    alert(properties.join("\n"));
     console.log("form properties : ", properties);
     return redirect("/data-display");
 };
